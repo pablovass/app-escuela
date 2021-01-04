@@ -26,6 +26,12 @@ namespace EscuelaApp
             Console.WriteLine(escuela3.Nombre); 
             Console.WriteLine(escuela3);
 
+            //objeto de parametro obcionales 
+            var esc4  = new Escuela("SchoolPorDefecto",2021,TiposEscuela.Secundaria,"Argentina","BA");
+            
+            Console.WriteLine(esc4);
+            
+
         }
     }
 }

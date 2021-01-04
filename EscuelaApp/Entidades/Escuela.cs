@@ -31,6 +31,14 @@ namespace EscuelaApp.Entidades
 
         //constructor lamda
         public Escuela(string nombre, string pais) => (Nombre, Pais) = (nombre, pais);
+        //constructor con un valor por defecto
+        public Escuela(string nombre, int año,TiposEscuela tipo, string pais="",
+                        string ciudad="")
+        {
+            (Nombre,AñoDeCreacion)=(nombre,año);
+            Pais=pais;
+            Ciudad=ciudad;
+        }
 
         // metodo toString 
         public override string ToString()
