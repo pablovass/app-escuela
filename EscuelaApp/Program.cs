@@ -21,8 +21,11 @@ namespace EscuelaApp
             escuela2.Ciudad ="Buenos Aires";
 
             // tersera escuela 
-            var escula3  = new Escuela("School", "Argentina");
-            Console.WriteLine(escula3.Nombre); 
+            var escuela3  = new Escuela("School", "Argentina");
+            escuela3.TipoEscuela=TiposEscuela.Primaria; // la enum planteada
+            Console.WriteLine(escuela3.Nombre); 
+            Console.WriteLine(escuela3);
+
         }
     }
 }

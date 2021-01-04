@@ -4,6 +4,7 @@ namespace EscuelaApp.Entidades
     {
 
         string nombre;
+        public TiposEscuela TipoEscuela{get;set;}
         //  string pais;
 
         // LO ENCAPSULE EN UNA PROPIEDAD
@@ -30,5 +31,11 @@ namespace EscuelaApp.Entidades
 
         //constructor lamda
         public Escuela(string nombre, string pais) => (Nombre, Pais) = (nombre, pais);
+
+        // metodo toString 
+        public override string ToString()
+        {
+            return $"Nombre: {Nombre},Tipo: {TipoEscuela}\n Pais: {Pais},Cuidad: {Ciudad}";
+        }
     }
 }
