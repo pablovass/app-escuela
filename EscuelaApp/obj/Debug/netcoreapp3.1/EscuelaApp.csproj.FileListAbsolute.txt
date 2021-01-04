@@ -1,0 +1,13 @@
+E:\Developer\csharp-actividades-2021\EscuelaApp\bin\Debug\netcoreapp3.1\EscuelaApp.exe
+E:\Developer\csharp-actividades-2021\EscuelaApp\bin\Debug\netcoreapp3.1\EscuelaApp.deps.json
+E:\Developer\csharp-actividades-2021\EscuelaApp\bin\Debug\netcoreapp3.1\EscuelaApp.runtimeconfig.json
+E:\Developer\csharp-actividades-2021\EscuelaApp\bin\Debug\netcoreapp3.1\EscuelaApp.runtimeconfig.dev.json
+E:\Developer\csharp-actividades-2021\EscuelaApp\bin\Debug\netcoreapp3.1\EscuelaApp.dll
+E:\Developer\csharp-actividades-2021\EscuelaApp\bin\Debug\netcoreapp3.1\EscuelaApp.pdb
+E:\Developer\csharp-actividades-2021\EscuelaApp\obj\Debug\netcoreapp3.1\EscuelaApp.csprojAssemblyReference.cache
+E:\Developer\csharp-actividades-2021\EscuelaApp\obj\Debug\netcoreapp3.1\EscuelaApp.AssemblyInfoInputs.cache
+E:\Developer\csharp-actividades-2021\EscuelaApp\obj\Debug\netcoreapp3.1\EscuelaApp.AssemblyInfo.cs
+E:\Developer\csharp-actividades-2021\EscuelaApp\obj\Debug\netcoreapp3.1\EscuelaApp.csproj.CoreCompileInputs.cache
+E:\Developer\csharp-actividades-2021\EscuelaApp\obj\Debug\netcoreapp3.1\EscuelaApp.dll
+E:\Developer\csharp-actividades-2021\EscuelaApp\obj\Debug\netcoreapp3.1\EscuelaApp.pdb
+E:\Developer\csharp-actividades-2021\EscuelaApp\obj\Debug\netcoreapp3.1\EscuelaApp.genruntimeconfig.cache
