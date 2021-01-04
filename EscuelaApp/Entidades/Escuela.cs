@@ -43,7 +43,7 @@ namespace EscuelaApp.Entidades
         // metodo toString 
         public override string ToString()
         {
-            return $"Nombre: {Nombre},Tipo: {TipoEscuela}\n Pais: {Pais},Cuidad: {Ciudad}";
+            return $" Nombre: {Nombre}, Tipo: {TipoEscuela}\n Pais: {Pais}, Cuidad: {Ciudad}";
         }
     }
 }
