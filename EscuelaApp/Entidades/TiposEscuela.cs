@@ -1,6 +1,6 @@
 namespace EscuelaApp.Entidades
 {
-    enum TiposEscuela
+    public enum TiposEscuela
     {
         Primaria, Secundaria, Prescolar
     }

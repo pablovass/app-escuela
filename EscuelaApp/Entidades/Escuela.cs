@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace EscuelaApp.Entidades
 {
-    class Escuela
+   public class Escuela
     {
 
         string nombre;
