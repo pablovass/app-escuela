@@ -7,9 +7,7 @@ namespace EscuelaApp.Entidades
 
         string nombre;
         public TiposEscuela TipoEscuela{get;set;}
-        //  string pais;
-
-        // LO ENCAPSULE EN UNA PROPIEDAD
+       
         public string Nombre
         {
             get { return "copia: " + nombre; }

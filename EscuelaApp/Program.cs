@@ -10,10 +10,9 @@ namespace EscuelaApp
     {
         static void Main(string[] args)
         {
-         var engine = new EscuelaEngine();
-         engine.Incializar();
-
-
+            var engine = new EscuelaEngine();
+            engine.Incializar();
+            WriteLine("=========================");
             ImprimirCursosEscuela(engine.Escuela);
         }
 
@@ -33,15 +32,5 @@ namespace EscuelaApp
             }
 
         }
-
-        private static void ImprimirCurso(Curso[] arregloCursos)
-        {
-            foreach (var curso in arregloCursos)
-            {
-                WriteLine($"Nombre {curso.Nombre}, id {curso.UniqueId} ");
-            }
-        }
-
-
     }
 }
