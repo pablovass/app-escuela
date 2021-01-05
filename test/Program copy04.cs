@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using EscuelaApp.Entidades;
 using static System.Console; // me va omitir la palabra console
 
@@ -12,7 +11,7 @@ namespace EscuelaApp
             //objeto de parametro obcionales 
             var escuela = new Escuela("SchoolPorDefecto", 2021, TiposEscuela.Secundaria, "Argentina", "BA");
 
-            var listaCurso=new List<Curso>();
+
             escuela.Cursos = new Curso[]{
                 new Curso(){Nombre = "101"},
                 new Curso(){Nombre = "201"},
