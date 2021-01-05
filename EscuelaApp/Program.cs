@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using EscuelaApp;
 using EscuelaApp.Entidades;
+using EscuelaApp.Util;
 using static System.Console; // me va omitir la palabra console
 
 namespace EscuelaApp
@@ -12,15 +13,14 @@ namespace EscuelaApp
         {
             var engine = new EscuelaEngine();
             engine.Incializar();
-            WriteLine("=========================");
+            Printer.EscribirTitulo("Bienvenido a la escuela");
+            Printer.DibujarLinea(15);
             ImprimirCursosEscuela(engine.Escuela);
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
-            WriteLine("=========================");
-            WriteLine("Cursos de la escuela");
-            WriteLine("=========================");
+            Printer.EscribirTitulo("Cursos de escuela");
 
             //evitamos crash por valores nulos
             if (escuela?.Cursos != null)
