@@ -19,7 +19,7 @@ namespace EscuelaApp.Entidades
         public int AñoDeCreacion { get; set; }
         public string Pais { get; set; }
         public string Ciudad { get; set; }
-        // private int myVar;
+        public Curso[] Cursos { get; set; }
         // constructor
         public Escuela(string nombre, int año)
         {
