@@ -14,8 +14,9 @@ namespace EscuelaApp.Entidades
             UniqueId = Guid.NewGuid().ToString(); // id aleatorio
             
         }*/
+       
         public Curso()=>UniqueId = Guid.NewGuid().ToString(); // id aleatorio
             
-        
+       
     }
 }

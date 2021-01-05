@@ -23,7 +23,6 @@ namespace EscuelaApp
                 new Curso(){ Nombre = "401", Jornada = TiposJornada.Noche.ToString() },
                 new Curso(){ Nombre = "501", Jornada = TiposJornada.Mañana.ToString() }
             };
-         
             escuela.Cursos.AddRange(otraColeccion);
             //especifica que borrar 
             escuela.Cursos.RemoveAll(delegate(Curso cur){
