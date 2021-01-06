@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace EscuelaApp.Entidades
 {
@@ -8,6 +9,8 @@ namespace EscuelaApp.Entidades
         public string UniqueId{ get;private set; }// el get es privado
 
         public string Jornada{ get; set; }
+        public List<Asignatura>Asignaturas{get; set;}
+        public List<Alumno>Alumnos{get; set;}
 /*
         public Curso()
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace EscuelaApp.Entidades
@@ -7,7 +8,7 @@ namespace EscuelaApp.Entidades
 
         string nombre;
         public TiposEscuela TipoEscuela{get;set;}
-       
+       public string UniqueId{ get;private set; }= Guid.NewGuid().ToString();// el get es privado
         public string Nombre
         {
             get { return "copia: " + nombre; }
