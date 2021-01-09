@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Developer\\csharp-actividades-2021\\EscuelaApp\\EscuelaApp.csproj": {}
+    "D:\\Developer\\csharp-actividades-2021\\EscuelaApp\\EscuelaApp.csproj": {}
   },
   "projects": {
-    "E:\\Developer\\csharp-actividades-2021\\EscuelaApp\\EscuelaApp.csproj": {
+    "D:\\Developer\\csharp-actividades-2021\\EscuelaApp\\EscuelaApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Developer\\csharp-actividades-2021\\EscuelaApp\\EscuelaApp.csproj",
+        "projectUniqueName": "D:\\Developer\\csharp-actividades-2021\\EscuelaApp\\EscuelaApp.csproj",
         "projectName": "EscuelaApp",
-        "projectPath": "E:\\Developer\\csharp-actividades-2021\\EscuelaApp\\EscuelaApp.csproj",
-        "packagesPath": "C:\\Users\\home\\.nuget\\packages\\",
-        "outputPath": "E:\\Developer\\csharp-actividades-2021\\EscuelaApp\\obj\\",
+        "projectPath": "D:\\Developer\\csharp-actividades-2021\\EscuelaApp\\EscuelaApp.csproj",
+        "packagesPath": "C:\\Users\\Wasp\\.nuget\\packages\\",
+        "outputPath": "D:\\Developer\\csharp-actividades-2021\\EscuelaApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\home\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Wasp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -24,6 +24,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -45,12 +47,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using EscuelaApp.Entidades;
+using EscuelaApp5._0.Entidades;
 
 
-namespace EscuelaApp
+namespace EscuelaApp5._0
 {
     public class EscuelaEngine
     {

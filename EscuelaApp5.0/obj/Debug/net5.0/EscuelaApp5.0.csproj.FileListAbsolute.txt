@@ -1,0 +1,16 @@
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\bin\Debug\net5.0\EscuelaApp5.0.exe
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\bin\Debug\net5.0\EscuelaApp5.0.deps.json
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\bin\Debug\net5.0\EscuelaApp5.0.runtimeconfig.json
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\bin\Debug\net5.0\EscuelaApp5.0.runtimeconfig.dev.json
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\bin\Debug\net5.0\EscuelaApp5.0.dll
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\bin\Debug\net5.0\ref\EscuelaApp5.0.dll
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\bin\Debug\net5.0\EscuelaApp5.0.pdb
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\EscuelaApp5.0.csprojAssemblyReference.cache
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\EscuelaApp5.0.GeneratedMSBuildEditorConfig.editorconfig
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\EscuelaApp5.0.AssemblyInfoInputs.cache
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\EscuelaApp5.0.AssemblyInfo.cs
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\EscuelaApp5.0.csproj.CoreCompileInputs.cache
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\EscuelaApp5.0.dll
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\ref\EscuelaApp5.0.dll
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\EscuelaApp5.0.pdb
+D:\Developer\csharp-actividades-2021\EscuelaApp5.0\obj\Debug\net5.0\EscuelaApp5.0.genruntimeconfig.cache

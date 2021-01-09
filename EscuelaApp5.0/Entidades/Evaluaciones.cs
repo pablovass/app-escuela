@@ -2,7 +2,7 @@ using System;
 /*
 Se tendria que llama Evaluacion
 */
-namespace EscuelaApp.Entidades
+namespace EscuelaApp5._0.Entidades
 {
     public class Evaluaciones
     {
