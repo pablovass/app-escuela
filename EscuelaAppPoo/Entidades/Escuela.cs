@@ -14,7 +14,7 @@ namespace EscuelaAppPoo.Entidades
         // constructor
         public Escuela(string nombre, int año)
         {
-            nombre = nombre;
+            Nombre = nombre;
             AñoDeCreacion = año;
         }
         //constructor vacio
