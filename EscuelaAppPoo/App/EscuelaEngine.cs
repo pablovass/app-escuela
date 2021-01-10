@@ -11,26 +11,22 @@ namespace EscuelaAppPoo
         // sealed = a sellado y solo se puede crear una instancia de esta clase
         // no se puede heredar de esta clase.
         public Escuela Escuela { get; set; }
-        public List<Evaluacion> Evaluaciones { get; set; }
         public EscuelaEngine()
         {
 
         }
         public void Incializar()
         {
-
-            Escuela = new Escuela("SchoolPorDefecto", 2021, TiposEscuela.Secundaria, "Argentina", "BA");
-
-            
+            Escuela = new Escuela("Vass Academy", 2021, TiposEscuela.Primaria,
+            ciudad: "BA", pais: "Argentina"
+            );
             CargarCursos();
             CargarAsignaturas();
             CargarEvaluaciones();
 
         }
-
         private void CargarEvaluaciones()
         {
-            var lista = new List<Evaluacion>();
             foreach (var curso in Escuela.Cursos)
             {
                 foreach (var asignatura in curso.Asignaturas)
@@ -38,6 +34,7 @@ namespace EscuelaAppPoo
                     foreach (var alumno in curso.Alumnos)
                     {
                         var rnd = new Random(System.Environment.TickCount);
+
                         for (int i = 0; i < 5; i++)
                         {
                             var ev = new Evaluacion
@@ -52,19 +49,38 @@ namespace EscuelaAppPoo
                     }
                 }
             }
-        }
 
+        }
+        public List<ObjetoEscuelaBase> GetObjetosEscuela()
+        {
+            var listaObj = new List<ObjetoEscuelaBase>();
+            listaObj.Add(Escuela);
+            listaObj.AddRange(Escuela.Cursos);
+
+            foreach (var curso in Escuela.Cursos)
+            {
+                listaObj.AddRange(curso.Asignaturas);
+                listaObj.AddRange(curso.Alumnos);
+
+                foreach (var alumno in curso.Alumnos)
+                {
+                    listaObj.AddRange(alumno.Evaluaciones);
+                }
+            }
+
+            return listaObj;
+        }
         private void CargarAsignaturas()
         {
-            foreach (var Curso in Escuela.Cursos)
+            foreach (var curso in Escuela.Cursos)
             {
-                var listaAsignaturas = new List<Asignatura>{
-                     new Asignatura {Nombre="Matematica"},
-                     new Asignatura {Nombre="Educacion fisica"},
-                     new Asignatura {Nombre="Castellano"},
-                     new Asignatura {Nombre="Ciencias Naturales"}
+                var listaAsignaturas = new List<Asignatura>(){
+                            new Asignatura{Nombre="Matemáticas"} ,
+                            new Asignatura{Nombre="Educación Física"},
+                            new Asignatura{Nombre="Castellano"},
+                            new Asignatura{Nombre="Ciencias Naturales"}
                 };
-                Curso.Asignaturas = listaAsignaturas;
+                curso.Asignaturas = listaAsignaturas;
             }
         }
 
@@ -73,6 +89,7 @@ namespace EscuelaAppPoo
             string[] nombre1 = { "Alba", "Felipa", "Eusebio", "Farid", "Donald", "Alvaro", "Nicolás" };
             string[] apellido1 = { "Ruiz", "Sarmiento", "Uribe", "Maduro", "Trump", "Toledo", "Herrera" };
             string[] nombre2 = { "Freddy", "Anabel", "Rick", "Murty", "Silvana", "Diomedes", "Nicomedes", "Teodoro" };
+
             var listaAlumnos = from n1 in nombre1
                                from n2 in nombre2
                                from a1 in apellido1
@@ -83,21 +100,20 @@ namespace EscuelaAppPoo
 
         private void CargarCursos()
         {
-            Escuela.Cursos = new List<Curso>(){
-                new Curso(){ Nombre = "101", Jornada = TiposJornada.Mañana.ToString() },
-                new Curso(){ Nombre = "201", Jornada = TiposJornada.Noche.ToString() },
-                new Curso(){ Nombre = "406", Jornada = TiposJornada.Mañana.ToString() },
-                new Curso(){ Nombre = "301", Jornada = TiposJornada.Noche.ToString() },
-                new Curso(){ Nombre = "401", Jornada = TiposJornada.Noche.ToString() },
-                new Curso(){ Nombre = "501", Jornada = TiposJornada.Mañana.ToString() }
+             Escuela.Cursos = new List<Curso>(){
+                        new Curso(){ Nombre = "101", Jornada = TiposJornada.Mañana.ToString() },
+                        new Curso() {Nombre = "201", Jornada = TiposJornada.Mañana.ToString()},
+                        new Curso{Nombre = "301", Jornada = TiposJornada.Mañana.ToString()},
+                        new Curso(){ Nombre = "401", Jornada = TiposJornada.Tarde.ToString() },
+                        new Curso() {Nombre = "501", Jornada = TiposJornada.Tarde.ToString()},
             };
             //int ramdom 
-            Random rnd = new Random();
+              Random rnd = new Random();
 
-            foreach (var curso in Escuela.Cursos)
+              foreach (var c in Escuela.Cursos)
             {
-                int cantidadRandom = rnd.Next(5, 20);
-                curso.Alumnos.AddRange(GenerarAlumnosAlAzar(cantidadRandom));
+                int cantRandom = rnd.Next(5, 20);
+                c.Alumnos = GenerarAlumnosAlAzar(cantRandom);
             }
         }
     }
