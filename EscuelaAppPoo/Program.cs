@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using System.Linq;
 using EscuelaAppPoo.Entidades;
 using EscuelaAppPoo.Util;
@@ -10,38 +11,18 @@ namespace EscuelaAppPoo
         static void Main(string[] args) {
 
             var engine = new EscuelaEngine();
-            engine.Incializar();
+            engine.Inicializar();
             Printer.EscribirTitulo("Bienvenido a la escuela");
             Printer.DibujarLinea(15);
             ImprimirCursosEscuela(engine.Escuela);
-
-            //nuevo objeto escuela
-            Printer.DibujarLinea(20);
-            Printer.EscribirTitulo("Prueva polimorfismo");
-            var alumnoTest= new Alumno{Nombre="Pablo vass"};
-            ObjetoEscuelaBase ob = alumnoTest;
-            Printer.EscribirTitulo("Alumno");
-            WriteLine($"Alumno {alumnoTest.Nombre}");
-            WriteLine($"Alumno {alumnoTest.UniqueId}");
-
-            Printer.EscribirTitulo("ObjetoEscuela");
-            WriteLine($"Alumno {ob.Nombre}");
-            WriteLine($"Alumno {ob.UniqueId}");
-
-            //var listaObjetos= engine.GetObjetosEscuela();
-            var listaObjetos= engine.GetObjetosEscuela(false,false,false,false);
-
-            //engine.Escuela.LimpiarLugar();
-            var listaIlugar=from obj in listaObjetos
-                            where obj is Ilugar
-                            select (Ilugar)obj;
-            
-            //me trae objetos de alumnos
-            /*
-            var listaIlugar=from obj in listaObjetos
-                            where obj is Alumno
-                            select (Alumno)obj;
-        */
+            Dictionary<int,string>diccionario=new Dictionary<int,string>();
+            diccionario.Add(10,"pabloV");
+            diccionario.Add(23,"PPPP");
+          /*
+          foreach (var keyValPair in diccionario)
+          {
+              WriteLine($"Key: {keyValPair.Key} Valor: {keyValPair.Value}")
+          }*/
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
