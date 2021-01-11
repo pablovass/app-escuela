@@ -38,6 +38,41 @@ namespace EscuelaAppPoo
 
             return listaAlumnos.OrderBy((al) => al.UniqueId).Take(cantidad).ToList();
         }
+        //sobrecarga de metodo 
+        // esta solucion me devuelve una sola cantidad epesifica. y es solo para evaluaciones.
+         public (List<ObjetoEscuelaBase>,int) GetObjetosEscuela(
+             bool traeEvaluaciones,
+             bool traeAlumnos,
+             bool traeAsignaturas,
+             bool traeCursos
+         )
+        {
+            int conteoEvaluaciones=0;
+            var listaObj = new List<ObjetoEscuelaBase>();
+            listaObj.Add(Escuela);
+            if(traeCursos)
+                listaObj.AddRange(Escuela.Cursos);
+            
+            foreach (var curso in Escuela.Cursos)
+            {
+            if(traeAsignaturas)
+                listaObj.AddRange(curso.Asignaturas);
+            if(traeAlumnos)
+                listaObj.AddRange(curso.Alumnos);
+
+               if (traeEvaluaciones)
+               {
+                    foreach (var alumno in curso.Alumnos)
+                {
+                    listaObj.AddRange(alumno.Evaluaciones);
+                    conteoEvaluaciones+=alumno.Evaluaciones.Count;
+                }
+               }
+            }
+
+            return listaObj , conteoEvaluaciones;
+        }
+        /*
          public List<ObjetoEscuelaBase> GetObjetosEscuela()
         {
             var listaObj = new List<ObjetoEscuelaBase>();
@@ -58,7 +93,7 @@ namespace EscuelaAppPoo
             return listaObj;
         }
 
-        
+        */
         #region  Metodo de carga
         private void CargarEvaluaciones()
         {

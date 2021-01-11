@@ -28,7 +28,8 @@ namespace EscuelaAppPoo
             WriteLine($"Alumno {ob.Nombre}");
             WriteLine($"Alumno {ob.UniqueId}");
 
-            var listaObjetos= engine.GetObjetosEscuela();
+            //var listaObjetos= engine.GetObjetosEscuela();
+            var listaObjetos= engine.GetObjetosEscuela(false,false,false,false);
 
             //engine.Escuela.LimpiarLugar();
             var listaIlugar=from obj in listaObjetos
