@@ -26,6 +26,8 @@ namespace EscuelaAppPoo
             Printer.EscribirTitulo("ObjetoEscuela");
             WriteLine($"Alumno {ob.Nombre}");
             WriteLine($"Alumno {ob.UniqueId}");
+
+            var listaObjetos= engine.GetObjetosEscuela();
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)

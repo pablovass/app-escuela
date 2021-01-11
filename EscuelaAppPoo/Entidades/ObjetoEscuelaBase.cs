@@ -13,5 +13,10 @@ namespace EscuelaAppPoo.Entidades
         {
             UniqueId=Guid.NewGuid().ToString();
         }
+        // me permite ver los datos a la hora de hacer el debuguer
+        public override string ToString()
+        {
+            return $"{Nombre},{UniqueId}";
+        }
     }
 }

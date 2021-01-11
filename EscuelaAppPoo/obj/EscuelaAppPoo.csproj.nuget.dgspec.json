@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Developer\\csharp-actividades-2021\\EscuelaAppPoo\\EscuelaAppPoo.csproj": {}
+    "C:\\Develop\\csharp-actividades-2021\\EscuelaAppPoo\\EscuelaAppPoo.csproj": {}
   },
   "projects": {
-    "D:\\Developer\\csharp-actividades-2021\\EscuelaAppPoo\\EscuelaAppPoo.csproj": {
+    "C:\\Develop\\csharp-actividades-2021\\EscuelaAppPoo\\EscuelaAppPoo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Developer\\csharp-actividades-2021\\EscuelaAppPoo\\EscuelaAppPoo.csproj",
+        "projectUniqueName": "C:\\Develop\\csharp-actividades-2021\\EscuelaAppPoo\\EscuelaAppPoo.csproj",
         "projectName": "EscuelaAppPoo",
-        "projectPath": "D:\\Developer\\csharp-actividades-2021\\EscuelaAppPoo\\EscuelaAppPoo.csproj",
-        "packagesPath": "C:\\Users\\Wasp\\.nuget\\packages\\",
-        "outputPath": "D:\\Developer\\csharp-actividades-2021\\EscuelaAppPoo\\obj\\",
+        "projectPath": "C:\\Develop\\csharp-actividades-2021\\EscuelaAppPoo\\EscuelaAppPoo.csproj",
+        "packagesPath": "C:\\Users\\waps-nt\\.nuget\\packages\\",
+        "outputPath": "C:\\Develop\\csharp-actividades-2021\\EscuelaAppPoo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Wasp\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\waps-nt\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
