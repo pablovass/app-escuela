@@ -1,4 +1,5 @@
 ﻿
+using System.Linq;
 using EscuelaAppPoo.Entidades;
 using EscuelaAppPoo.Util;
 using static System.Console; // me va omitir la palabra console
@@ -28,6 +29,18 @@ namespace EscuelaAppPoo
             WriteLine($"Alumno {ob.UniqueId}");
 
             var listaObjetos= engine.GetObjetosEscuela();
+
+            //engine.Escuela.LimpiarLugar();
+            var listaIlugar=from obj in listaObjetos
+                            where obj is Ilugar
+                            select (Ilugar)obj;
+            
+            //me trae objetos de alumnos
+            /*
+            var listaIlugar=from obj in listaObjetos
+                            where obj is Alumno
+                            select (Alumno)obj;
+        */
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
