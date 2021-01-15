@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EscuelaAppPoo.App;
 using EscuelaAppPoo.Entidades;
 using EscuelaAppPoo.Util;
 using static System.Console; // me va omitir la palabra console
@@ -33,6 +34,10 @@ namespace EscuelaAppPoo
 
           var dictpm= engine.GetDiccionarioObjetos();
           engine.ImprimirDiccionario(dictpm,true);
+
+          var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
+           // var reporteador = new Reporteador(null);
+            reporteador.GetListaEvaluacions();
         }
         // un evento es una accion 
         private static void AccionEvento(object sender, EventArgs e)
