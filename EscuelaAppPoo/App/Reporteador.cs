@@ -3,13 +3,12 @@ using System.Linq; // siempre que trabaje con colecciones esta buenos
 using System.Collections.Generic;
 using EscuelaAppPoo.Entidades;
 
-// todas las clases estatiscas tienen un constructor estatico
-// estudiar constructores staticos 
+
 namespace EscuelaAppPoo.App
 {
     public class Reporteador
     {
-        Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> _diccionario;  // siempre que hago es privado _privado (guion bajo)
+        Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> _diccionario;  
         public Reporteador(Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> dicObsEsc)
         {
             if (dicObsEsc == null)
@@ -18,26 +17,18 @@ namespace EscuelaAppPoo.App
             }
             _diccionario = dicObsEsc;
         }
-        /*    
-        public IEnumerable<Evaluacion>GetEvaluacions()
+        public IEnumerable<Evaluacion> GetListaEvaluacions()
         {
-            var lista= _diccionario.GetValueOrDefault(LlaveDiccionario.Escuela); 
-            return lista.Cast<Escuela>();       }  
-    
-    */
-        public IEnumerable<Escuela> GetListaEvaluacions()
-        {
-            IEnumerable<Escuela> rta;
-            //var lista = _diccionario.GetValueOrDefault(LlaveDiccionario.Escuela); me trae un valor por defecto
+           // IEnumerable<Evaluacion> rta;
+            
             if(_diccionario.TryGetValue(LlaveDiccionario.Escuela,out IEnumerable<ObjetoEscuelaBase> lista))
             {
-               rta= lista.Cast<Escuela>();
+               return lista.Cast<Evaluacion>()
             }
             {
-                rta=null;
-                //Escribir en el log de auditoria
+               return new List<Evaluacion>();
+                
             }
-            return rta;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace EscuelaAppPoo
 {
        public sealed class EscuelaEngine
     {
-        public Escuela Escuela { get; set; }
+        public Evaluacion Escuela { get; set; }
 
         public EscuelaEngine()
         {
@@ -17,7 +17,7 @@ namespace EscuelaAppPoo
 
         public void Inicializar()
         {
-            Escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria,
+            Escuela = new Evaluacion("Platzi Academy", 2012, TiposEscuela.Primaria,
             ciudad: "Bogotá", pais: "Colombia"
             );
 

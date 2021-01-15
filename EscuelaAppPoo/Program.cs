@@ -11,11 +11,9 @@ namespace EscuelaAppPoo
 {
     class Program{
         static void Main(string[] args) {
-            // esto es un manejador de eventos con multiples delegados o predicados
-            //son como los eventos de js
+            
             AppDomain.CurrentDomain.ProcessExit+=AccionEvento;
             AppDomain.CurrentDomain.ProcessExit+=(o,s)=>Printer.EscribirTitulo("va un beep");
-            // eliminar el evento
             AppDomain.CurrentDomain.ProcessExit-=AccionEvento;
 
             var engine = new EscuelaEngine();
@@ -26,20 +24,16 @@ namespace EscuelaAppPoo
             Dictionary<int,string>diccionario=new Dictionary<int,string>();
             diccionario.Add(10,"pabloV");
             diccionario.Add(23,"PPPP");
-          /*
-          foreach (var keyValPair in diccionario)
-          {
-              WriteLine($"Key: {keyValPair.Key} Valor: {keyValPair.Value}")
-          }*/
+      
 
           var dictpm= engine.GetDiccionarioObjetos();
           engine.ImprimirDiccionario(dictpm,true);
 
           var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
            // var reporteador = new Reporteador(null);
-            reporteador.GetListaEvaluacions();
+            
+            var evalList=reporteador.GetListaEvaluacions();
         }
-        // un evento es una accion 
         private static void AccionEvento(object sender, EventArgs e)
         {
             Printer.EscribirTitulo("Inicia el evento ");
@@ -48,7 +42,7 @@ namespace EscuelaAppPoo
 
         }
 
-        private static void ImprimirCursosEscuela(Escuela escuela)
+        private static void ImprimirCursosEscuela(Evaluacion escuela)
         {
             Printer.EscribirTitulo("Cursos de escuela");
 

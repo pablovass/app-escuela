@@ -4,7 +4,7 @@ using EscuelaAppPoo.Util;
 
 namespace EscuelaAppPoo.Entidades
 {
-   public class Escuela : ObjetoEscuelaBase, Ilugar
+   public class Evaluacion : ObjetoEscuelaBase, Ilugar
     {
         public int AñoDeCreacion { get; set; }
         public string Pais { get; set; }
@@ -15,18 +15,18 @@ namespace EscuelaAppPoo.Entidades
         public List<Curso> Cursos { get; set; }
        
         // constructor
-        public Escuela(string nombre, int año)
+        public Evaluacion(string nombre, int año)
         {
             Nombre = nombre;
             AñoDeCreacion = año;
         }
         //constructor vacio
-        public Escuela() { }
+        public Evaluacion() { }
 
         //constructor lamda
-        public Escuela(string nombre, string pais) => (Nombre, Pais) = (nombre, pais);
+        public Evaluacion(string nombre, string pais) => (Nombre, Pais) = (nombre, pais);
         //constructor con un valor por defecto
-        public Escuela(string nombre, int año,TiposEscuela tipo, string pais="",
+        public Evaluacion(string nombre, int año,TiposEscuela tipo, string pais="",
                         string ciudad="")
         {
             (Nombre,AñoDeCreacion)=(nombre,año);
