@@ -1,0 +1,16 @@
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\leerArchivos.csprojAssemblyReference.cache
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\leerArchivos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\leerArchivos.AssemblyInfoInputs.cache
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\leerArchivos.AssemblyInfo.cs
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\leerArchivos.csproj.CoreCompileInputs.cache
+C:\Develop\csharp-actividades-2021\leerArchivos\bin\Debug\net5.0\leerArchivos.exe
+C:\Develop\csharp-actividades-2021\leerArchivos\bin\Debug\net5.0\leerArchivos.deps.json
+C:\Develop\csharp-actividades-2021\leerArchivos\bin\Debug\net5.0\leerArchivos.runtimeconfig.json
+C:\Develop\csharp-actividades-2021\leerArchivos\bin\Debug\net5.0\leerArchivos.runtimeconfig.dev.json
+C:\Develop\csharp-actividades-2021\leerArchivos\bin\Debug\net5.0\leerArchivos.dll
+C:\Develop\csharp-actividades-2021\leerArchivos\bin\Debug\net5.0\ref\leerArchivos.dll
+C:\Develop\csharp-actividades-2021\leerArchivos\bin\Debug\net5.0\leerArchivos.pdb
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\leerArchivos.dll
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\ref\leerArchivos.dll
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\leerArchivos.pdb
+C:\Develop\csharp-actividades-2021\leerArchivos\obj\Debug\net5.0\leerArchivos.genruntimeconfig.cache
