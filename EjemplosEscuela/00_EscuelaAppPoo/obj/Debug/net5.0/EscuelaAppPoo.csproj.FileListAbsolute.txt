@@ -30,3 +30,10 @@ C:\Develop\csharp-actividades-2021\EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.
 C:\Develop\csharp-actividades-2021\EscuelaAppPoo\obj\Debug\net5.0\ref\EscuelaAppPoo.dll
 C:\Develop\csharp-actividades-2021\EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.pdb
 C:\Develop\csharp-actividades-2021\EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.genruntimeconfig.cache
+C:\dev\csharp-actividades-2021\EjemplosEscuela\00_EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.csproj.AssemblyReference.cache
+C:\dev\csharp-actividades-2021\EjemplosEscuela\00_EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\csharp-actividades-2021\EjemplosEscuela\00_EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.AssemblyInfoInputs.cache
+C:\dev\csharp-actividades-2021\EjemplosEscuela\00_EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.AssemblyInfo.cs
+C:\dev\csharp-actividades-2021\EjemplosEscuela\00_EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.csproj.CoreCompileInputs.cache
+C:\dev\csharp-actividades-2021\EjemplosEscuela\00_EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.dll
+C:\dev\csharp-actividades-2021\EjemplosEscuela\00_EscuelaAppPoo\obj\Debug\net5.0\EscuelaAppPoo.pdb

@@ -1,28 +1,40 @@
-# cshar-actividades-2021
-Son el rejunte de ejercicios de crear un proyecto lo publico aparte 
+# Gestión de Escuela
 
-empesamos con el proyecto de escuela platzi 
-dotnet new console -o Escuela
+Este repositorio contiene un programa de gestión de una escuela desarrollado en C#.
 
- SHIF + Alt + F = dar formato al documento (texto)
+## Autor
 
-propiedades en c# es un atributo 
+- Nombre: [Tu Nombre]
+- Correo electrónico: [Tu Correo Electrónico]
 
-control + .(botonPunto) hace el import de la clase que nesesito
-ctor = construtor 
+## Requisitos
 
-pluggins:
-        C# (por defecto)
-        C# Extensions (jchannon)
-        C# Visual Studio IntelliCode (Microsoft)
-    
+- .NET Core SDK 3.1 o superior
 
-prop : permite crear rápidamente una propiedad en una clase.
-ctor: permite crear rápidamente un constructor
-cw: crea el código para imprimir valores en consola System.Console.WriteLine();
+## Descripción
 
-pvm puedes crear medtodo void
-pum crear metodos que retornan un String
-Shift + Alt + (flecha abajo) para duplicar la misma linea.
-    
+El programa de gestión de escuela es una aplicación que permite administrar información relacionada con una escuela, como alumnos, profesores, asignaturas, calificaciones, etc. 
 
+La aplicación está desarrollada en C# y utiliza .NET Core para su funcionamiento. Utiliza los conceptos de programación orientada a objetos y bases de datos para almacenar y manipular los datos de la escuela.
+
+## Funcionalidades
+
+El programa de gestión de escuela ofrece las siguientes funcionalidades:
+
+- Registro y mantenimiento de alumnos.
+- Registro y mantenimiento de profesores.
+- Registro y mantenimiento de asignaturas.
+- Asignación de alumnos a asignaturas.
+- Registro y consulta de calificaciones.
+- Generación de reportes y estadísticas.
+
+## Ejecución
+
+Para ejecutar la aplicación, asegúrate de tener instalado el SDK de .NET Core 3.1 o superior. Luego, sigue estos pasos:
+
+1. Abre una ventana de línea de comandos o terminal.
+2. Navega hasta el directorio raíz del proyecto.
+3. Ejecuta el siguiente comando para compilar y ejecutar el programa:
+
+   ```shell
+   dotnet run

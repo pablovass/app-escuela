@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "PUdHVhGB8vdiOzUmpv23OPGzXONvJ2Wi52/9ibhGq7cTUtWlmFKXALex9rxTenoG4Ey2L3n/TFYQ0KDIC7KZ8Q==",
+  "dgSpecHash": "aJzWQ3RV00DtI2ZKZDlx+84QeRgVqRSfEJk5wGorqH7XDSoIokLZKnn3XQa4kC/CQedCFBGY0P3CUNiYnjN0Yw==",
   "success": true,
-  "projectFilePath": "D:\\Developer\\csharp-actividades-2021\\EscuelaApp5.0\\EscuelaApp5.0.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\dev\\csharp-actividades-2021\\EjemplosEscuela\\EscuelaApp5.0\\EscuelaApp5.0.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dev\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\dev\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\dev\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\dev\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
   "logs": []
 }
