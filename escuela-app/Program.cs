@@ -8,13 +8,11 @@ namespace escuela_app
         static void Main(string[] args)
         {
             // Crear una instancia de la clase Escuela y asignar valores a sus propiedades
-            var escuela = new Escuela("Vass School", 2023);
-            escuela.Pais = "Argentina";
-            escuela.Ciudad = "BA";
-            escuela.TiposEscuela = TiposEscuela.Primaria;
-
+            var escuela = new Escuela("Vass School", 2023,TiposEscuela.Secundaria,
+            ciudad:"Bogota",pais:"Argentina");
+            
             // Imprimir el nombre de la escuela en la consola
-            Console.WriteLine(escuela.Nombre);
+            Console.WriteLine(escuela);
         }
     }
 }
