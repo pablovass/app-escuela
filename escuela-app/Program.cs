@@ -11,6 +11,7 @@ namespace escuela_app
             var escuela = new Escuela("Vass School", 2023);
             escuela.Pais = "Argentina";
             escuela.Ciudad = "BA";
+            escuela.TiposEscuela = TiposEscuela.Primaria;
 
             // Imprimir el nombre de la escuela en la consola
             Console.WriteLine(escuela.Nombre);

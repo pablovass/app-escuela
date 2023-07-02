@@ -10,17 +10,16 @@ namespace escuela_app.Entidades
         public string Pais { get; set; }           // Propiedad para almacenar el país de la escuela
         public string Ciudad { get; set; }         // Propiedad para almacenar la ciudad de la escuela
         public string Direccion { get; set; }      // Propiedad para almacenar la dirección de la escuela
+        public TiposEscuela TiposEscuela { get; set; }
       
         // Constructor por defecto
-        public Escuela() { }
-
-         // public Escuela(string nombre, int año)
-        // {
-        //    this.nombre = nombre;
-        //     this.AñoDeCreacion = año;
-        // }
-        
+        public Escuela() { } 
         // Constructor con parámetros utilizando expresiones de asignación
         public Escuela(string nombre, int año) => (Nombre, AñoDeCreacion) = (nombre, año);
+        
+        public override string ToString()
+        {
+            return $"Nombre{Nombre}, Tipo{TiposEscuela}, \n Pais{Pais}, Ciudad{Ciudad}";
+        }
     }
 }
