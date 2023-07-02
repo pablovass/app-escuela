@@ -4,12 +4,12 @@ Este repositorio contiene un programa de gestión de una escuela desarrollado en
 
 ## Autor
 
-- Nombre: [Tu Nombre]
-- Correo electrónico: [Tu Correo Electrónico]
+- Nombre: Pablo Vallejos
+- Correo electrónico: pablovallejosdeveloper@gmail.com
 
 ## Requisitos
 
-- .NET Core SDK 3.1 o superior
+- .NET Core SDK 7 o superior
 
 ## Descripción
 
