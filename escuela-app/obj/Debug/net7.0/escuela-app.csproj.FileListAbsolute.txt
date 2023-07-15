@@ -13,3 +13,6 @@ C:\dev\csharp-actividades-2021\escuela-app\obj\Debug\net7.0\refint\escuela-app.d
 C:\dev\csharp-actividades-2021\escuela-app\obj\Debug\net7.0\escuela-app.pdb
 C:\dev\csharp-actividades-2021\escuela-app\obj\Debug\net7.0\escuela-app.genruntimeconfig.cache
 C:\dev\csharp-actividades-2021\escuela-app\obj\Debug\net7.0\ref\escuela-app.dll
+C:\dev\csharp-actividades-2021\escuela-app\bin\Debug\net7.0\Serilog.dll
+C:\dev\csharp-actividades-2021\escuela-app\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+C:\dev\csharp-actividades-2021\escuela-app\obj\Debug\net7.0\escuela-app.csproj.CopyComplete

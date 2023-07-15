@@ -1,52 +1,47 @@
-﻿using System;
-using escuela_app.Entidades;  // Importar el espacio de nombres de las entidades de la escuela
-using static System.Console; //con esta linea omitimos System.Console.
+﻿using Serilog;
+using escuela_app.Entidades;
+using static System.Console;//con esta linea omitimos System.Console
+
 namespace escuela_app
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // Crear una instancia de la clase Escuela y asignar valores a sus propiedades
-            var escuela = new Escuela("Vass School", 2023, TiposEscuela.Secundaria,
-            ciudad: "Bogota", pais: "Argentina");
-            //asi
-            // var arregloCursos = new Curso[3]{
-            //      new Curso { Nombre = "101" },
-            //      new Curso { Nombre = "102" },
-            //      new Curso { Nombre = "103" }};
-            //o asi es lo mismo
-            //  Curso[] arregloCursos ={
-            //      new Curso { Nombre = "101" },
-            //      new Curso { Nombre = "102" },
-            //      new Curso { Nombre = "103" }};
-            //      escuela.Cursos=arregloCursos;
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                //.WriteTo.File("log.txt")
+                .CreateLogger();
 
-            //o asi tambien
-            escuela.Cursos = new Curso[]{
-                new Curso { Nombre = "101" },
-                new Curso { Nombre = "102" },
-                new Curso { Nombre = "103" }};
+            try
+            {
+                var escuela = new Escuela("Vass School", 2023, TiposEscuela.Secundaria,
+                    ciudad: "Bogota", pais: "Argentina");
 
+                escuela.Cursos = new Curso[]{
+                    new Curso { Nombre = "101" },
+                    new Curso { Nombre = "102" },
+                    new Curso { Nombre = "103" }
+                };
 
-            // Imprimir el nombre de la escuela en la consola
-            ImprimirCursosEscuela(escuela);
-            //  Console.WriteLine(escuela);
-            //  System.Console.WriteLine("=========="); //cw shortcut
-            //  ImprimirCursosWhile(arregloCursos);
-            //  System.Console.WriteLine("==========");
-            //  ImprimirCursosDoWhile(arregloCursos);
-            //  System.Console.WriteLine("==========");
-            //  ImprimirCursosFor(arregloCursos);
-            //  System.Console.WriteLine("==========");
-            //  ImprimirCursosForEach(arregloCursos);
+                ImprimirCursosEscuela(escuela);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Ocurrió un error en el programa");
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
-            WriteLine("=====================");
-            WriteLine("Cursos de la escuela");
-            WriteLine("=====================");
+            Log.Information("=====================");
+            Log.Information("Cursos de la escuela");
+            Log.Information("=====================");
+
             if (escuela.Cursos == null && escuela != null)
             {
                 return;
@@ -55,13 +50,9 @@ namespace escuela_app
             {
                 foreach (var curso in escuela.Cursos)
                 {
-                    WriteLine($"Nombre {curso.Nombre},Id {curso.UniqueId}");
+                    Log.Information($"Nombre {curso.Nombre}, Id {curso.UniqueId}");
                 }
             }
-
-
-
-
         }
 
         private static void ImprimirCursosWhile(Curso[] arregloCursos)
@@ -103,4 +94,6 @@ namespace escuela_app
         }
 
     }
-}
+
+    }
+
