@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\dev\\csharp-actividades-2021\\escuela-app\\escuela-app.csproj": {
-      "version": "1.0.0",
+      "version": "0.5.0",
       "restore": {
         "projectUniqueName": "C:\\dev\\csharp-actividades-2021\\escuela-app\\escuela-app.csproj",
         "projectName": "escuela-app",
@@ -43,6 +43,16 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
