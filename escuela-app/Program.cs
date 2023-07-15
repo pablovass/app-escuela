@@ -18,8 +18,8 @@ namespace escuela_app
             Console.WriteLine(escuela);
             System.Console.WriteLine("=========="); //cw shortcut
            Console.WriteLine(curso1.Nombre+" "+","+curso1.UniqueId);
-           Console.WriteLine($"{curso2.Nombre}, {curso1.UniqueId}");
-           Console.WriteLine(curso3.Nombre+" "+","+curso1.UniqueId);
+           Console.WriteLine($"{curso2.Nombre}, {curso2.UniqueId}");
+           Console.WriteLine(curso3.Nombre+" "+","+curso3.UniqueId);
         }
     }
 }
