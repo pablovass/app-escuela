@@ -18,9 +18,19 @@ namespace escuela_app
             // Imprimir el nombre de la escuela en la consola
             Console.WriteLine(escuela);
             System.Console.WriteLine("=========="); //cw shortcut
-           Console.WriteLine(arreglegoCursos[0].Nombre+" "+","+arreglegoCursos[0].UniqueId);
-           Console.WriteLine($"{arreglegoCursos[1].Nombre}, {arreglegoCursos[1].UniqueId}");
-           Console.WriteLine(arreglegoCursos[2].Nombre+" "+","+arreglegoCursos[2].UniqueId);
+         // Console.WriteLine(arreglegoCursos[0].Nombre+" "+","+arreglegoCursos[0].UniqueId);
+         // Console.WriteLine($"{arreglegoCursos[1].Nombre}, {arreglegoCursos[1].UniqueId}");
+         // Console.WriteLine(arreglegoCursos[2].Nombre+" "+","+arreglegoCursos[2].UniqueId);
+         ImprimirCursos(arreglegoCursos);
+        }
+        private static void ImprimirCursos(Curso[]arregloCursos){
+          int contador =0;
+          while(contador<arregloCursos.Length)
+          {
+            System.Console.WriteLine($"Nombre{arregloCursos[contador].Nombre},Id {arregloCursos[contador].UniqueId}");
+            contador++;
+          }
+
         }
     }
 }
