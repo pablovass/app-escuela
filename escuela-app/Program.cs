@@ -11,8 +11,15 @@ namespace escuela_app
             var escuela = new Escuela("Vass School", 2023,TiposEscuela.Secundaria,
             ciudad:"Bogota",pais:"Argentina");
             
+            var curso1=new Curso(){Nombre="101"};
+            var curso2=new Curso(){Nombre="102"};
+            var curso3=new Curso(){Nombre="103"};
             // Imprimir el nombre de la escuela en la consola
             Console.WriteLine(escuela);
+            System.Console.WriteLine("=========="); //cw shortcut
+           Console.WriteLine(curso1.Nombre+" "+","+curso1.UniqueId);
+           Console.WriteLine($"{curso2.Nombre}, {curso1.UniqueId}");
+           Console.WriteLine(curso3.Nombre+" "+","+curso1.UniqueId);
         }
     }
 }
