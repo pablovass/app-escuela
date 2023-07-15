@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QkVYV5uXA2bTUOTaKE5bQgca0zAAW2mtvHM9MO2l+kG+ePqmqHNEZOKz4D7h0CHsu45GPbnfzZXG6qJZRfqh5g==",
+  "dgSpecHash": "anIRlQL6Y/9I4jy0tVIJfAnnrQm4KltLNcylEg6qK++kYTXOP4o0RxMK4DF2Ytn3kvEYNeIo1o8Squld1gM/GQ==",
   "success": true,
-  "projectFilePath": "C:\\dev\\csharp-actividades-2021\\escuela-app\\escuela-app.csproj",
+  "projectFilePath": "c:\\dev\\csharp-actividades-2021\\escuela-app\\escuela-app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dev\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
     "C:\\Users\\dev\\.nuget\\packages\\serilog.sinks.console\\4.1.0\\serilog.sinks.console.4.1.0.nupkg.sha512",
