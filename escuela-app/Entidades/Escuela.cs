@@ -11,6 +11,7 @@ namespace escuela_app.Entidades
         public string Ciudad { get; set; }         // Propiedad para almacenar la ciudad de la escuela
         public string Direccion { get; set; }      // Propiedad para almacenar la dirección de la escuela
         public TiposEscuela TiposEscuela { get; set; } // Propiedad para almacenar el tipo de escuela
+        public Curso[] Cursos { get; set; }
 
         // Constructor por defecto
         public Escuela() { }
