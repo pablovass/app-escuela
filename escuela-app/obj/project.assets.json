@@ -12,7 +12,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "0.4.0",
+    "version": "0.5.0",
     "restore": {
       "projectUniqueName": "c:\\dev\\csharp-actividades-2021\\escuela-app\\escuela-app.csproj",
       "projectName": "escuela-app",
