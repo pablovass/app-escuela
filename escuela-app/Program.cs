@@ -1,5 +1,4 @@
 ﻿using Serilog;
-using Serilog.Sinks.File; // Agrega este using directive
 using escuela_app.Entidades;
 using static System.Console;//con esta linea omitimos System.Console
 
@@ -19,12 +18,31 @@ namespace escuela_app
                 var escuela = new Escuela("Vass School", 2023, TiposEscuela.Secundaria,
                     ciudad: "Bogota", pais: "Argentina");
 
-                escuela.Cursos = new Curso[]{
-                    new Curso { Nombre = "101" },
-                    new Curso { Nombre = "102" },
-                    new Curso { Nombre = "103" }
-                };
-
+            //esto es un colletion 
+         //      var listaCursos = new List<Curso>(){
+         //          new Curso { Nombre = "101" },
+         //          new Curso { Nombre = "102" },
+         //          new Curso { Nombre = "103" }
+         //  };
+        //arreglo o array
+         //       escuela.Cursos = new Curso[]{
+         //           new Curso { Nombre = "101" },
+         //           new Curso { Nombre = "102" },
+         //           new Curso { Nombre = "103" }
+         //       };
+           escuela.Cursos = new List<Curso>(){
+                    new Curso { Nombre = "101",Jornada=TiposJornada.Mañana },
+                    new Curso { Nombre = "102" ,Jornada=TiposJornada.Mañana},
+                    new Curso { Nombre = "103",Jornada=TiposJornada.Mañana }
+            };
+            var otraColeccion = new List<Curso>(){
+                    new Curso { Nombre = "401",Jornada=TiposJornada.Mañana },
+                    new Curso { Nombre = "502" ,Jornada=TiposJornada.Mañana},
+                    new Curso { Nombre = "603",Jornada=TiposJornada.Noche }
+            };
+            escuela.Cursos.Add(new Curso { Nombre = "212",Jornada=TiposJornada.Tarde});
+            escuela.Cursos.AddRange(otraColeccion);
+            
                 ImprimirCursosEscuela(escuela);
             }
             catch (Exception ex)
@@ -96,5 +114,5 @@ namespace escuela_app
 
     }
 
-    }
+}
 
