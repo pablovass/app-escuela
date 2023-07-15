@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "escuela-app/0.2.0": {
+      "escuela-app/0.3.0": {
         "runtime": {
           "escuela-app.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "escuela-app/0.2.0": {
+    "escuela-app/0.3.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
