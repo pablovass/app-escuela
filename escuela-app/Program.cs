@@ -1,4 +1,5 @@
 ﻿using Serilog;
+using Serilog.Sinks.File; // Agrega este using directive
 using escuela_app.Entidades;
 using static System.Console;//con esta linea omitimos System.Console
 
@@ -10,7 +11,7 @@ namespace escuela_app
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
-                //.WriteTo.File("log.txt")
+                .WriteTo.File("log.txt")
                 .CreateLogger();
 
             try
