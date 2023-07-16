@@ -5,6 +5,9 @@ using escuela_app.Entidades;
 
 namespace escuela_app.App
 {
+    /// <summary>
+    /// Motor de la Escuela que administra la inicialización y carga de datos.
+    /// </summary>
     public sealed class EscuelaEngine
     {
         // sealed = a sellado y solo se puede crear una instancia de esta clase
@@ -14,6 +17,9 @@ namespace escuela_app.App
         {
 
         }
+        /// <summary>
+        /// Inicializa la escuela, carga los cursos, asignaturas y evaluaciones.
+        /// </summary>
         public void Incializar()
         {
             Escuela = new Escuela("Vass Academy", 2021, TiposEscuela.Primaria,
@@ -37,8 +43,14 @@ namespace escuela_app.App
 
             return listaAlumnos.OrderBy((al) => al.UniqueId).Take(cantidad).ToList();
         }
-        //sobrecarga de metodo 
-        // esta solucion me devuelve una sola cantidad epesifica. y es solo para evaluaciones.
+        /// <summary>
+        /// Obtiene los objetos de la escuela según los parámetros especificados.
+        /// </summary>
+        /// <param name="traeEvaluaciones">Indica si se deben incluir las evaluaciones.</param>
+        /// <param name="traeAlumnos">Indica si se deben incluir los alumnos.</param>
+        /// <param name="traeAsignaturas">Indica si se deben incluir las asignaturas.</param>
+        /// <param name="traeCursos">Indica si se deben incluir los cursos.</param>
+        /// <returns>Una tupla que contiene la lista de objetos de la escuela y el conteo total de evaluaciones.</returns>
         public (List<ObjetoEscuelaBase>, int) GetObjetosEscuela(
             bool traeEvaluaciones,
             bool traeAlumnos,
@@ -69,10 +81,13 @@ namespace escuela_app.App
                 }
             }
 
-            return (listaObj , conteoEvaluaciones);
+            return (listaObj, conteoEvaluaciones);
         }
 
         #region  Metodo de carga
+        /// <summary>
+        /// Carga las evaluaciones para cada asignatura y alumno de los cursos de la escuela.
+        /// </summary>
         private void CargarEvaluaciones()
         {
             foreach (var curso in Escuela.Cursos)
@@ -99,7 +114,9 @@ namespace escuela_app.App
             }
 
         }
-
+        /// <summary>
+        /// Carga las asignaturas para cada curso de la escuela.
+        /// </summary>
         private void CargarAsignaturas()
         {
             foreach (var curso in Escuela.Cursos)
@@ -115,7 +132,9 @@ namespace escuela_app.App
         }
 
 
-
+        /// <summary>
+        /// Carga los cursos de la escuela y genera alumnos aleatoriamente para cada curso.
+        /// </summary>
         private void CargarCursos()
         {
             Escuela.Cursos = new List<Curso>(){

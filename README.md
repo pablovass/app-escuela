@@ -30,7 +30,7 @@ El programa de gestión de escuela ofrece las siguientes funcionalidades:
 
 ## Ejecución
 
-Para ejecutar la aplicación, asegúrate de tener instalado el SDK de .NET Core 3.1 o superior. Luego, sigue estos pasos:
+Para ejecutar la aplicación, asegúrate de tener instalado el SDK de .NET Core 7 o superior. Luego, sigue estos pasos:
 
 1. Abre una ventana de línea de comandos o terminal.
 2. Navega hasta el directorio raíz del proyecto.
