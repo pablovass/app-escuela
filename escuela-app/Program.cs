@@ -18,18 +18,6 @@ namespace escuela_app
                 var escuela = new Escuela("Vass School", 2023, TiposEscuela.Secundaria,
                     ciudad: "Bogota", pais: "Argentina");
 
-            //esto es un colletion 
-         //      var listaCursos = new List<Curso>(){
-         //          new Curso { Nombre = "101" },
-         //          new Curso { Nombre = "102" },
-         //          new Curso { Nombre = "103" }
-         //  };
-        //arreglo o array
-         //       escuela.Cursos = new Curso[]{
-         //           new Curso { Nombre = "101" },
-         //           new Curso { Nombre = "102" },
-         //           new Curso { Nombre = "103" }
-         //       };
            escuela.Cursos = new List<Curso>(){
                     new Curso { Nombre = "101",Jornada=TiposJornada.Mañana },
                     new Curso { Nombre = "102" ,Jornada=TiposJornada.Mañana},
@@ -44,7 +32,21 @@ namespace escuela_app
             escuela.Cursos.AddRange(otraColeccion);
             
                 ImprimirCursosEscuela(escuela);
+                //Predicate<Curso>miAlgoritmo=Predicado; este tambien se puede ir solo porque es C# 3 en adelante [inferencias de tipos]
+               // escuela.Cursos.RemoveAll(miAlgoritmo); por inferencia de tipos esto puede ser asi
+               // estas son todos lo mismo 
+               escuela.Cursos.RemoveAll(Predicado);
+               escuela.Cursos.RemoveAll(delegate(Curso curso) { return curso.Nombre=="311";});
+               escuela.Cursos.RemoveAll((Curso curso) =>  curso.Nombre=="311");
+               escuela.Cursos.RemoveAll((curso) =>  curso.Nombre=="311");
+               escuela.Cursos.RemoveAll((curso) =>  curso.Nombre=="502" && curso.Jornada==TiposJornada.Mañana);
+
+                WriteLine("========");
+                ImprimirCursosEscuela(escuela);
+                
+
             }
+
             catch (Exception ex)
             {
                 Log.Error(ex, "Ocurrió un error en el programa");
@@ -53,6 +55,11 @@ namespace escuela_app
             {
                 Log.CloseAndFlush();
             }
+        }
+
+        private static bool Predicado(Curso obj)
+        {
+            return obj.Nombre=="3001";
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
