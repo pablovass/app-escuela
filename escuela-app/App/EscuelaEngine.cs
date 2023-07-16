@@ -69,7 +69,7 @@ namespace escuela_app.App
                 }
             }
 
-            return listaObj , conteoEvaluaciones;
+            return (listaObj , conteoEvaluaciones);
         }
 
         #region  Metodo de carga

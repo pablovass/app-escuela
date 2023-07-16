@@ -41,7 +41,7 @@ namespace escuela_app.Entidades
         public void LimpiarLugar()
         {
             Printer.DibujarLinea();
-            Console.WriteLine("Limpiando EScuela....");
+            Console.WriteLine("Limpiando Escuela....");
             foreach (var curso in Cursos)
             {
                 curso.LimpiarLugar();
