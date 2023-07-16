@@ -18,3 +18,8 @@
 2023-07-16 16:53:36.939 -03:00 [INF] Nombre 301, Id d4cad405-0eca-4b71-888a-691df8b9210b
 2023-07-16 16:53:36.961 -03:00 [INF] Nombre 401, Id 3efb8fba-e8ea-4432-b756-ca61b1281cb4
 2023-07-16 16:53:36.994 -03:00 [INF] Nombre 501, Id 96ae161b-ceb9-4d20-ab95-c6eabe766549
+2023-07-16 18:48:32.815 -03:00 [ERR] Ocurrió un error en el programa
+System.NotImplementedException: The method or operation is not implemented.
+   at escuela_app.App.EscuelaEngine.CargarAlumnos() in C:\dev\csharp-actividades-2021\escuela-app\App\EscuelaEngine.cs:line 81
+   at escuela_app.App.EscuelaEngine.Inicializar() in C:\dev\csharp-actividades-2021\escuela-app\App\EscuelaEngine.cs:line 20
+   at escuela_app.Program.Main(String[] args) in C:\dev\csharp-actividades-2021\escuela-app\Program.cs:line 23

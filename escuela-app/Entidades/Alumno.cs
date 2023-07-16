@@ -1,13 +1,10 @@
-using System.Xml;
+using System;
 
 namespace escuela_app.Entidades
 {
-    public class Alumno
+    public class Alumno : ObjetoEscuelaBase
     {
-        public string UniqueId { get; set;} 
-        public string Name { get; set;}
-        public Alumno()=>UniqueId=Guid.NewGuid().ToString();
-    
+        public List<Evaluacion> Evaluaciones { get; set; } = new List<Evaluacion>();
     }
 
 }
