@@ -1,7 +1,9 @@
 ﻿using Serilog;
 using escuela_app.Entidades;
-using static System.Console;//con esta linea omitimos System.Console
 using escuela_app.App;
+using escuela_app.Util;
+using static System.Console;//con esta linea omitimos System.Console
+
 
 namespace escuela_app
 {
@@ -9,6 +11,7 @@ namespace escuela_app
     {
         static void Main(string[] args)
         {
+            Printer.WriteTitle("BIENVENIDOS A LA  ESCUELA");
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .WriteTo.File("log.txt")
@@ -18,7 +21,7 @@ namespace escuela_app
             {
                 var engine = new EscuelaEngine();
                 engine.Inicializar();
-                WriteLine("========");
+                Printer.DibujarLinea();
                 ImprimirCursosEscuela(engine.Escuela);
             }
             catch (Exception ex)
@@ -33,10 +36,7 @@ namespace escuela_app
 
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
-            Log.Information("=====================");
-            Log.Information("Cursos de la escuela");
-            Log.Information("=====================");
-
+            Printer.WriteTitle("Cursos de la escuela");
             if (escuela.Cursos == null && escuela != null)
             {
                 return;
