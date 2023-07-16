@@ -5,6 +5,7 @@ namespace escuela_app.Entidades
 {
     public class Escuela
     {
+        public string UniqueId { get; set;} =Guid.NewGuid().ToString();
         public string Nombre { get; set; }         // Propiedad para almacenar el nombre de la escuela
         public int AñoDeCreacion { get; set; }     // Propiedad para almacenar el año de creación de la escuela
         public string Pais { get; set; }           // Propiedad para almacenar el país de la escuela
@@ -12,9 +13,7 @@ namespace escuela_app.Entidades
         public string Direccion { get; set; }      // Propiedad para almacenar la dirección de la escuela
         public TiposEscuela TiposEscuela { get; set; } // Propiedad para almacenar el tipo de escuela
         public List<Curso> Cursos { get; set; }
-        //  public Curso[] Cursos { get; set; }
-
-        // Constructor por defecto
+        
         public Escuela() { }
 
         // Constructor con parámetros utilizando expresiones de asignación
