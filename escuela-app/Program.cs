@@ -20,8 +20,8 @@ namespace escuela_app
             try
             {
                 var engine = new EscuelaEngine();
-                engine.Incializar();
-                Printer.DibujarLinea();
+                engine.Inicializar();
+                Printer.DrawLine();
                 ImprimirCursosEscuela(engine.Escuela);
             }
             catch (Exception ex)

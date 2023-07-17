@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace escuela_app.Entidades
 {
     public abstract class ObjetoEscuelaBase

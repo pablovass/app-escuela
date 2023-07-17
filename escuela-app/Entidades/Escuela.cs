@@ -82,7 +82,7 @@ namespace escuela_app.Entidades
         /// </summary>
         public void LimpiarLugar()
         {
-            Printer.DibujarLinea();
+            Printer.DrawLine();
             Console.WriteLine("Limpiando Escuela....");
             foreach (var curso in Cursos)
             {

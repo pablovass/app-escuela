@@ -1,73 +1,174 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using escuela_app.Entidades;
+using escuela_app.Util;
 
 namespace escuela_app.App
 {
-    /// <summary>
-    /// Motor de la Escuela que administra la inicialización y carga de datos.
-    /// </summary>
     public sealed class EscuelaEngine
     {
-        // sealed = a sellado y solo se puede crear una instancia de esta clase
-        // no se puede heredar de esta clase.
         public Escuela Escuela { get; set; }
+
         public EscuelaEngine()
         {
 
         }
-        /// <summary>
-        /// Inicializa la escuela, carga los cursos, asignaturas y evaluaciones.
-        /// </summary>
-        public void Incializar()
+
+        public void Inicializar()
         {
-            Escuela = new Escuela("Vass Academy", 2021, TiposEscuela.Primaria,
-            ciudad: "BA", pais: "Argentina"
+            Escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria,
+            ciudad: "Bogotá", pais: "Colombia"
             );
+
             CargarCursos();
             CargarAsignaturas();
             CargarEvaluaciones();
 
         }
-        private List<Alumno> GenerarAlumnosAlAzar(int cantidad)
+
+        public void ImprimirDiccionario(Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> dic,
+                        bool imprEval = false)
         {
-            string[] nombre1 = { "Alba", "Felipa", "Eusebio", "Farid", "Donald", "Alvaro", "Nicolás" };
-            string[] apellido1 = { "Ruiz", "Sarmiento", "Uribe", "Maduro", "Trump", "Toledo", "Herrera" };
-            string[] nombre2 = { "Freddy", "Anabel", "Rick", "Murty", "Silvana", "Diomedes", "Nicomedes", "Teodoro" };
+            foreach (var objdic in dic)
+            {
+                Printer.WriteTitle(objdic.Key.ToString());
 
-            var listaAlumnos = from n1 in nombre1
-                               from n2 in nombre2
-                               from a1 in apellido1
-                               select new Alumno { Nombre = $"{n1} {n2} {a1}" };
-
-            return listaAlumnos.OrderBy((al) => al.UniqueId).Take(cantidad).ToList();
+                foreach (var val in objdic.Value)
+                {
+                    switch (objdic.Key)
+                    {
+                        case LlaveDiccionario.Evaluacion:
+                            if (imprEval)
+                                Console.WriteLine(val);
+                            break;
+                        case LlaveDiccionario.Escuela:
+                            Console.WriteLine("Escuela: " + val);
+                            break;
+                        case LlaveDiccionario.Alumno:
+                            Console.WriteLine("Alumno: " + val.Nombre);
+                            break;
+                        case LlaveDiccionario.Curso:
+                            var curtmp = val as Curso;
+                            if (curtmp != null)
+                            {
+                                int count = curtmp.Alumnos.Count;
+                                Console.WriteLine("Curso: " + val.Nombre + " Cantidad Alumnos: " + count);
+                            }
+                            break;
+                        default:
+                            Console.WriteLine(val);
+                            break;
+                    }
+                }
+            }
         }
-        /// <summary>
-        /// Obtiene los objetos de la escuela según los parámetros especificados.
-        /// </summary>
-        /// <param name="traeEvaluaciones">Indica si se deben incluir las evaluaciones.</param>
-        /// <param name="traeAlumnos">Indica si se deben incluir los alumnos.</param>
-        /// <param name="traeAsignaturas">Indica si se deben incluir las asignaturas.</param>
-        /// <param name="traeCursos">Indica si se deben incluir los cursos.</param>
-        /// <returns>Una tupla que contiene la lista de objetos de la escuela y el conteo total de evaluaciones.</returns>
-        public (List<ObjetoEscuelaBase>, int) GetObjetosEscuela(
-            bool traeEvaluaciones,
-            bool traeAlumnos,
-            bool traeAsignaturas,
-            bool traeCursos
-        )
+
+        public Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> GetDiccionarioObjetos()
         {
-            int conteoEvaluaciones = 0;
+            var diccionario = new Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>>();
+
+            diccionario.Add(LlaveDiccionario.Escuela, new[] { Escuela });
+            diccionario.Add(LlaveDiccionario.Curso, Escuela.Cursos.Cast<ObjetoEscuelaBase>());
+
+            var listatmp = new List<Evaluacion>();
+            var listatmpas = new List<Asignatura>();
+            var listatmpal = new List<Alumno>();
+
+            foreach (var cur in Escuela.Cursos)
+            {
+                listatmpas.AddRange(cur.Asignaturas);
+                listatmpal.AddRange(cur.Alumnos);
+
+                foreach (var alum in cur.Alumnos)
+                {
+                    listatmp.AddRange(alum.Evaluaciones);
+                }
+
+            }
+            diccionario.Add(LlaveDiccionario.Evaluacion,
+                                    listatmp.Cast<ObjetoEscuelaBase>());
+            diccionario.Add(LlaveDiccionario.Asignatura,
+                                    listatmpas.Cast<ObjetoEscuelaBase>());
+            diccionario.Add(LlaveDiccionario.Alumno,
+                                    listatmpal.Cast<ObjetoEscuelaBase>());
+            return diccionario;
+        }
+
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+            bool traeEvaluaciones = true,
+            bool traeAlumnos = true,
+            bool traeAsignaturas = true,
+            bool traeCursos = true
+            )
+        {
+
+            return GetObjetosEscuela(out int dummy, out dummy, out dummy, out dummy);
+        }
+
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+            out int conteoEvaluaciones,
+           bool traeEvaluaciones = true,
+           bool traeAlumnos = true,
+           bool traeAsignaturas = true,
+           bool traeCursos = true
+           )
+        {
+
+            return GetObjetosEscuela(out conteoEvaluaciones, out int dummy, out dummy, out dummy);
+        }
+
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+                        out int conteoEvaluaciones, out int conteoCursos,
+                        bool traeEvaluaciones = true,
+                        bool traeAlumnos = true,
+                        bool traeAsignaturas = true,
+                        bool traeCursos = true
+                        )
+        {
+
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoCursos, out int dummy, out dummy);
+        }
+
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+                        out int conteoEvaluaciones,
+                        out int conteoCursos,
+                        out int conteoAsignaturas,
+                        bool traeEvaluaciones = true,
+                        bool traeAlumnos = true,
+                        bool traeAsignaturas = true,
+                        bool traeCursos = true
+             )
+        {
+
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoCursos, out conteoAsignaturas, out int dummy);
+        }
+
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+            out int conteoEvaluaciones,
+            out int conteoCursos,
+            out int conteoAsignaturas,
+            out int conteoAlumnos,
+            bool traeEvaluaciones = true,
+            bool traeAlumnos = true,
+            bool traeAsignaturas = true,
+            bool traeCursos = true
+            )
+        {
+            conteoAlumnos = conteoAsignaturas = conteoEvaluaciones = 0;
+
             var listaObj = new List<ObjetoEscuelaBase>();
             listaObj.Add(Escuela);
+
             if (traeCursos)
                 listaObj.AddRange(Escuela.Cursos);
 
+            conteoCursos = Escuela.Cursos.Count;
             foreach (var curso in Escuela.Cursos)
             {
+                conteoAsignaturas += curso.Asignaturas.Count;
+                conteoAlumnos += curso.Alumnos.Count;
+
                 if (traeAsignaturas)
                     listaObj.AddRange(curso.Asignaturas);
+
                 if (traeAlumnos)
                     listaObj.AddRange(curso.Alumnos);
 
@@ -75,36 +176,35 @@ namespace escuela_app.App
                 {
                     foreach (var alumno in curso.Alumnos)
                     {
+
                         listaObj.AddRange(alumno.Evaluaciones);
                         conteoEvaluaciones += alumno.Evaluaciones.Count;
                     }
                 }
             }
 
-            return (listaObj, conteoEvaluaciones);
+            return listaObj.AsReadOnly();
         }
 
-        #region  Metodo de carga
-        /// <summary>
-        /// Carga las evaluaciones para cada asignatura y alumno de los cursos de la escuela.
-        /// </summary>
+        #region Métodos de Carga
         private void CargarEvaluaciones()
         {
+            var rnd = new Random();
             foreach (var curso in Escuela.Cursos)
             {
                 foreach (var asignatura in curso.Asignaturas)
                 {
                     foreach (var alumno in curso.Alumnos)
                     {
-                        var rnd = new Random(System.Environment.TickCount);
-
                         for (int i = 0; i < 5; i++)
                         {
                             var ev = new Evaluacion
                             {
                                 Asignatura = asignatura,
                                 Nombre = $"{asignatura.Nombre} Ev#{i + 1}",
-                                Nota = (float)(5 * rnd.NextDouble()),
+                                Nota = MathF.Round(
+                                    5 * (float)rnd.NextDouble()
+                                    , 2),
                                 Alumno = alumno
                             };
                             alumno.Evaluaciones.Add(ev);
@@ -114,9 +214,9 @@ namespace escuela_app.App
             }
 
         }
-        /// <summary>
-        /// Carga las asignaturas para cada curso de la escuela.
-        /// </summary>
+
+
+
         private void CargarAsignaturas()
         {
             foreach (var curso in Escuela.Cursos)
@@ -131,10 +231,20 @@ namespace escuela_app.App
             }
         }
 
+        private List<Alumno> GenerarAlumnosAlAzar(int cantidad)
+        {
+            string[] nombre1 = { "Alba", "Felipa", "Eusebio", "Farid", "Donald", "Alvaro", "Nicolás" };
+            string[] apellido1 = { "Ruiz", "Sarmiento", "Uribe", "Maduro", "Trump", "Toledo", "Herrera" };
+            string[] nombre2 = { "Freddy", "Anabel", "Rick", "Murty", "Silvana", "Diomedes", "Nicomedes", "Teodoro" };
 
-        /// <summary>
-        /// Carga los cursos de la escuela y genera alumnos aleatoriamente para cada curso.
-        /// </summary>
+            var listaAlumnos = from n1 in nombre1
+                               from n2 in nombre2
+                               from a1 in apellido1
+                               select new Alumno { Nombre = $"{n1} {n2} {a1}" };
+
+            return listaAlumnos.OrderBy((al) => al.UniqueId).Take(cantidad).ToList();
+        }
+
         private void CargarCursos()
         {
             Escuela.Cursos = new List<Curso>(){
@@ -144,9 +254,8 @@ namespace escuela_app.App
                         new Curso(){ Nombre = "401", Jornada = TiposJornada.Tarde.ToString() },
                         new Curso() {Nombre = "501", Jornada = TiposJornada.Tarde.ToString()},
             };
-            //int ramdom 
-            Random rnd = new Random();
 
+            Random rnd = new Random();
             foreach (var c in Escuela.Cursos)
             {
                 int cantRandom = rnd.Next(5, 20);
@@ -154,5 +263,5 @@ namespace escuela_app.App
             }
         }
     }
+    #endregion
 }
-#endregion
