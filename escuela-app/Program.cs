@@ -11,45 +11,48 @@ namespace escuela_app
     {
         static void Main(string[] args)
         {
-            Printer.WriteTitle("BIENVENIDOS A LA  ESCUELA");
-            Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console()
-                .WriteTo.File("log.txt")
-                .CreateLogger();
+            AppDomain.CurrentDomain.ProcessExit += AccionDelEvento; //evento 
 
-            try
+            var engine = new EscuelaEngine();
+            engine.Inicializar();
+            Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
+            
+            Dictionary<int, string> dicccionario = new Dictionary<int, string>();
+
+            dicccionario.Add(10, "JuanK");
+
+            dicccionario.Add(23, "Lorem Ipsum");
+
+            foreach (var keyValPair in dicccionario)
             {
-                var engine = new EscuelaEngine();
-                engine.Inicializar();
-                Printer.DrawLine();
-                ImprimirCursosEscuela(engine.Escuela);
+                WriteLine($"Key: {keyValPair.Key} Valor: {keyValPair.Value}");
             }
-            catch (Exception ex)
-            {
-                Log.Error(ex, "Ocurrió un error en el programa");
-            }
-            finally
-            {
-                Log.CloseAndFlush();
-            }
+
+            var dictmp = engine.GetDiccionarioObjetos();
+
+            engine.ImprimirDiccionario(dictmp, true);
+
         }
 
-        private static void ImprimirCursosEscuela(Escuela escuela)
+        private static void AccionDelEvento(object sender, EventArgs e)
         {
-            Printer.WriteTitle("Cursos de la escuela");
-            if (escuela.Cursos == null && escuela != null)
-            {
-                return;
-            }
-            else
+            Printer.WriteTitle("SALIENDO");
+            Printer.WriteTitle("SALIÓ");
+        }
+
+        private static void ImpimirCursosEscuela(Escuela escuela)
+        {
+
+            Printer.WriteTitle("Cursos de la Escuela");
+
+
+            if (escuela?.Cursos != null)
             {
                 foreach (var curso in escuela.Cursos)
                 {
-                    Log.Information($"Nombre {curso.Nombre}, Id {curso.UniqueId}");
+                    WriteLine($"Nombre {curso.Nombre}, Id  {curso.UniqueId}");
                 }
             }
         }
     }
-
 }
-
