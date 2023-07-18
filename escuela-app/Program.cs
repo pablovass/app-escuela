@@ -17,8 +17,9 @@ namespace escuela_app
             engine.Inicializar();
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
-            var evalList=reporteador.GetListaEvaluaciones();
-            var listaAsignaturas=reporteador.GetListaAsignaturas();
+            var evalList = reporteador.GetListaEvaluaciones();
+            var listaAsignaturas = reporteador.GetListaAsignaturas();
+            var listaporAsignatura = reporteador.GetPromeAlumnPorAsignatura();
 
             Dictionary<int, string> dicccionario = new Dictionary<int, string>();
 

@@ -63,5 +63,25 @@ namespace escuela_app.App
 
             return dictaRta;
         }
+        public Dictionary<string, IEnumerable<object>> GetPromeAlumnPorAsignatura()
+        {
+            var rta = new Dictionary<string, IEnumerable<object>>();
+            var dicEvalXAsig = GetDicEvaluaXAsig();
+            foreach (var asigConEval in dicEvalXAsig)
+            {
+                var promsAlumn = from eval in asigConEval.Value
+                                 group eval by new { eval.Alumno.UniqueId, eval.Alumno.Nombre }
+                into grupoEvalsAlumno
+                                 select new AlumnoPromedio
+                                 {
+                                     alumnoId = grupoEvalsAlumno.Key.UniqueId,
+                                     alumnoNombre = grupoEvalsAlumno.Key.Nombre,
+                                     promedio = grupoEvalsAlumno.Average(evaluacion => evaluacion.Nota)
+                                 };
+                rta.Add(asigConEval.Key, promsAlumn);
+            }
+
+            return rta;
+        }
     }
 }
