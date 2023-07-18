@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using escuela_app.Util;
 namespace escuela_app.Entidades
 {
@@ -13,7 +11,7 @@ namespace escuela_app.Entidades
 
         public void LimpiarLugar()
         {
-            Printer.DibujarLinea();
+            Printer.DrawLine();
             Console.WriteLine("Limpiando Establesimientos....");
             Console.WriteLine($"Curso{Nombre} Limpio");
         }

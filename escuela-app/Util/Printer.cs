@@ -2,26 +2,31 @@ using static System.Console;
 
 namespace escuela_app.Util
 {
-    /// <summary>
-    /// Clase de utilidades para imprimir en la consola.
-    /// </summary>
     public static class Printer
     {
-        /// <summary>
-        /// Dibuja una línea compuesta por un carácter especificado.
-        /// </summary>
-        /// <param name="tam">Longitud de la línea (por defecto es 10).</param>
-        public static void DibujarLinea(int tam = 10)
+        public static void DrawLine(int tam = 10)
         {
             WriteLine("".PadLeft(tam, '='));
         }
+
+        public static void PresioneENTER()
+        {
+            WriteLine("Presione ENTER para continuar");
+        }
         public static void WriteTitle(string titulo)
         {
-            var tamaño=titulo.Length+4;
-            DibujarLinea(tamaño);
+            var tamaño =titulo.Length + 4;
+            DrawLine(tamaño);
             WriteLine($"| {titulo} |");
-            DibujarLinea(tamaño);
+            DrawLine(tamaño);
+        }
+
+        public static void Beep(int hz = 2000, int tiempo=500, int cantidad =1)
+        {
+            while (cantidad-- > 0)
+            {
+               // System.Console.Beep(hz, tiempo);
+            }
         }
     }
-    
 }
