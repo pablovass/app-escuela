@@ -20,36 +20,48 @@ namespace escuela_app.App
                 .WriteTo.File("log.txt") // Especifica el archivo de registro
                 .CreateLogger();
         }
-
-        public IEnumerable<Escuela> GetListaEvaluacions()
+        public IEnumerable<Evaluacion> GetListaEvaluaciones()
         {
-            IEnumerable<Escuela> rta;
-
-            if (_diccionario.TryGetValue(LlaveDiccionario.Escuela, out IEnumerable<ObjetoEscuelaBase> lista))
+            if (_diccionario.TryGetValue(LlaveDiccionario.Evaluacion,
+                                                 out IEnumerable<ObjetoEscuelaBase> lista))
             {
-                rta = lista.Cast<Escuela>();
+                return lista.Cast<Evaluacion>();
             }
-            else
             {
-                rta = null;
                 _logger.Error("No se pudo obtener la lista de evaluaciones."); // Registro de log de error
-            }
+                return new List<Evaluacion>();
 
-            return rta;
+            }
         }
+
         public IEnumerable<string> GetListaAsignaturas()
         {
-            var listaEvaluaciones=GetListaEvaluacions();
-            
-            return (from Evaluacion ev in listaEvaluaciones
-            select ev.Asignatura.Nombre).Distinct();
-
-            
+            return GetListaAsignaturas(out var dummy);
         }
-        public Dictionary<string ,IEnumerable<Evaluacion>> GetDicEvaluancion(){
-            var dictaRta=new Dictionary<string ,IEnumerable<Evaluacion>>();
-            return dictaRta;
+        public IEnumerable<string> GetListaAsignaturas(
+             out IEnumerable<Evaluacion> listaEvaluaciones)
+        {
+            listaEvaluaciones = GetListaEvaluaciones();
 
+            return (from Evaluacion ev in listaEvaluaciones
+                    select ev.Asignatura.Nombre).Distinct();
+        }
+        public Dictionary<string, IEnumerable<Evaluacion>> GetDicEvaluaXAsig()
+        {
+            var dictaRta = new Dictionary<string, IEnumerable<Evaluacion>>();
+
+            var listaAsig = GetListaAsignaturas(out var listaEval);
+
+            foreach (var asig in listaAsig)
+            {
+                var evalsAsig = from eval in listaEval
+                                where eval.Asignatura.Nombre == asig
+                                select eval;
+
+                dictaRta.Add(asig, evalsAsig);
+            }
+
+            return dictaRta;
         }
     }
 }
