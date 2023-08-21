@@ -1,5 +1,9 @@
 namespace escuela_app.Entidades
 {
+        /// <summary>
+        /// ObjetoEscuelaBase es abstract porque no quiero que se instancie objetos de esta clase, pero tambien cumple con los coseptos de abstract.
+        /// </summary>
+
     public abstract class ObjetoEscuelaBase
     {
         // la clase abstrapta no se pueden implementar e instanciar una clase de esta clase.
