@@ -3,6 +3,9 @@ using escuela_app.Util;
 
 namespace escuela_app.App
 {
+       /// <summary>
+        /// sealed == sellada  puedo crear instancias pero no puedo heredar de la clase.
+        /// </summary>
     public sealed class EscuelaEngine
     {
         public Escuela Escuela { get; set; }
