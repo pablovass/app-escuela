@@ -2,7 +2,7 @@
 .vs/
 bin/
 obj/
-
+.vscode/
 # Archivos de respaldo y temporales
 *.bak
 *.cache
